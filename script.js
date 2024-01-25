@@ -39,6 +39,17 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
+    fetch('webcomponent/indexfooterbar.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('indexfooterbar-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('Error loading navbar:', error);
+        });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
     fetch('webcomponent/footerbar.html')
         .then(response => response.text())
         .then(data => {

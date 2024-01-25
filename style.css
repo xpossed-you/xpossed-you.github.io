@@ -1,11 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
-body{
+body, html{
     background-color: rgb(0, 15, 19);
-}
-
-html {
     scroll-behavior: smooth;
+    height: 100%;
+    margin: 0;
 }
 
 #home, #collection, #social {
@@ -115,6 +114,9 @@ html {
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
 
 }
 
@@ -152,14 +154,6 @@ html {
     left: 0;
     width: 100%;
     z-index: 1000;
-}
-
-.navbar2 {
-    color: rgb(35, 35, 35);
-    position: absolute;
-    bottom: 30px;
-    transform: translateY(4000%);
-    height: fit-content;
 }
 
 .container-card {
@@ -263,3 +257,26 @@ html {
     opacity: 30%;
 }
 
+.main-content {
+    flex: 1;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.indexfooterbar {
+    color: rgb(35, 35, 35);
+    position: absolute;
+    bottom: 30px;
+    transform: translateY(4000%);
+    height: fit-content;
+}
+
+.footerbar {
+    color: rgb(35, 35, 35);
+    position: fixed;
+    height: fit-content;
+}
