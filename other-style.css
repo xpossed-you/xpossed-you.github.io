@@ -1,0 +1,29 @@
+.flex-container-other {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.main-content-other {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.secret-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: fit-content;
+    color: aliceblue;
+    letter-spacing: normal;
+    transition: transform 0.3s ease, letter-spacing 0.3s ease;
+}
+
+.secret-box:hover {
+    letter-spacing: 0.1em;
+    transform: scale(1.05);
+}
