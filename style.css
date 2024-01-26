@@ -292,10 +292,13 @@ body, html{
 
 .xsombong {
     filter: blur(1px);
+    letter-spacing: normal;
+    transition: letter-spacing 0.5s ease;
 }
 
 .xsombong:hover {
     filter: blur(0px);
+    letter-spacing: 0.05em;
 }
 
 .topcarouselcaption {
