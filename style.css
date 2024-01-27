@@ -49,7 +49,6 @@ body, html{
 
 #backgroundVideo {
     top: 10px;
-    filter: blur(6px);
     position: static;
     right: 0;
     bottom: 0;
@@ -350,4 +349,11 @@ body, html{
   
 ::-webkit-scrollbar-track {
     background-color: #f1f1f144; /* Color of the scrollbar track */
+}
+
+article {
+    color: white;
+    text-align: justify;
+    line-height: 1.6;
+    margin-bottom: 20px;
 }

@@ -10,17 +10,74 @@
     <link rel="manifest" href="favicon_io/site.webmanifest">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="other-style.css">
-    <title>xpos</title>
+    <style>
+        h1, h2, h3, h4, h5 {
+            color: rgb(59, 205, 161);
+        }
+
+        p {
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .article-container {
+            background-color: rgba(110, 255, 187, 0.329);
+            padding: 20px;
+            margin: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            color: black;
+            z-index: 10;
+        }
+
+        #backgroundVideo1 {
+            top: 10px;
+            position: fixed;
+            min-width: 100%;
+            min-height: 100%;
+            opacity: 20%;
+            width: auto;
+            height: auto;
+            background-size: auto;
+            filter: blur(0.5px);
+        }
+        
+    </style>
+    <title>Article</title>
 </head>
 <body>
+
+    <div class="video-container">
+        <video autoplay muted loop id="backgroundVideo1">
+            <source src="media/home/video.mp4" type="video/mp4">
+        </video>
+
 <div id="navbar-placeholder"></div>
 <div class="flex-container-other">
 <div class="main-content-other">
     
 <!-- KONTEN NYA MULAI DISINI -->
-<div class="secret-box">
-    <h3 class="xv">&lt;x-y&gt;</h3>
-    <p class="xsombong">still the same</p>
+
+
+<div class="article-container">
+<article>
+    <h3>Anti-Aim di CS2</h3>
+
+    <p>
+        Anti-Aim adalah fitur cheat yang memungkinkan player untuk mengatur pergerakan model karakter sehingga membuat aimbot musuh kesulitan untuk mengenai player yang berarti Anti-Aim hanya membuat Aimbot musuh "bingung" untuk menembaki orientasi hitbox player. Berikut ini gambaran singkat sejarah dari Fitur Anti-Aim:
+    </p>
+
+    <h5>Anti-Aim Dasar</h5>
+    <p>
+        Sejak rilisnya game CS:GO, Fitur Anti-Aim mempunyai beberapa teknik dasar salah satu nya yaitu Jitter Movement yang mengacak pergerakan pada posisi model player ke arah yaw (horizontal) atau pitch (vertikal) ataupun roll (depan-belakang). 
+    </p>
+
+    <h5>Fitur-fitur Baru</h5>
+    <p>
+        Karena sudah banyak program cheat yang dijual, muncul persaingan diantara pembuat-pembuat cheat tersebut, seperti persaingan dalam membuat anti-aim yang paling banyak membuat aimbot musuh miss. Ini membuat coder cheat untuk bekerja keras dan menciptakan fitur-fitur baru seperti Fake Angles, LBY, Fake-Lag, Freestanding
+    </p>
+
+</article>
 </div>
 
 <!-- KONTEN NYA ABIS DISINI -->
