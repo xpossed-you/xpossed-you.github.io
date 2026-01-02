@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>youloveme?</title>
+
+    <style>
+        /* ===========================
+           GLOBAL DARK THEME VARIABLES
+        =========================== */
+        html[data-theme="dark"] {
+            --bg: #1d1f21;
+            --bg-card: #2b2d31;
+            --bg-card-transparent: #151618ad;
+            --text: #e6e6e6;
+            --primary: #9b4dca;
+            --danger: #ff4c4c;
+            --border: #3a3c3f;
+            --primary-hover: #9a4dca6b;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: Arial, sans-serif;
+            background-size: cover;       /* cover entire screen */
+            background-position: center;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 120px 20px;
+        }
+
+        .greet-subtitle {
+            color: #aaa;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+        .greet-subtitle:hover {
+            color: #fff;
+            text-shadow: 0 0 10px #fff;
+            transform: scale(1.01);
+        }
+
+        .offline-box {
+            margin: 30px auto;
+            background: var(--bg-card-transparent);
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            max-width: 480px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            backdrop-filter: blur(11px);
+        }
+
+        .offline-title {
+            font-size: 26px;
+            margin-bottom: 10px;
+        }
+
+        .offline-text {
+            color: #ccc;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .warning {
+            color: #ff6d6d;
+            font-style: italic;
+        }
+
+
+        /* -----------------------------
+            Animations
+        ------------------------------ */
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg);filter: blur(0px); }
+            25%      { transform: translate(1px, -2px) rotate(2deg);filter: blur(0px); }
+            50%      { transform: translate(-1px, -1px) rotate(1deg);filter: blur(0px); }
+            75%      { transform: translate(1px, -2px) rotate(-1deg);filter: blur(0px); }
+        }
+
+        @keyframes float2 {
+            0%, 100% { transform: translate(0, 0) rotate(0deg);filter: blur(0px); }
+            25%      { transform: translate(-2px, 1px) rotate(-1deg);filter: blur(0px); }
+            50%      { transform: translate(0, -2px) rotate(2deg);filter: blur(0px); }
+            75%      { transform: translate(2px, 1px) rotate(-2deg);filter: blur(0px); }
+        }
+
+        /* -----------------------------
+            Base Logo Styles
+        ------------------------------ */
+        img.logo {
+            width: 130px;
+            transition: 0.3s;
+            filter: drop-shadow(0 0 5px rgba(0,0,0,0.5));
+            
+        }
+
+        /* -----------------------------
+            Variants (only the animation differs)
+        ------------------------------ */
+        img.logo.tfk  { animation: float 6s ease-in-out infinite; }
+        img.logo.tfk2 { animation: float2 6s ease-in-out infinite; }
+
+        /* -----------------------------
+            Hover (shared)
+        ------------------------------ */
+        img.logo:hover {
+            filter: drop-shadow(0 0 5px rgba(217, 217, 217, 0.5));
+            transform: scale(1.02);
+        }
+
+
+        .row-gambar {
+            display: flex;
+            justify-content: center;
+            gap: 70px;
+            transition: 0.3s all;
+        }
+
+        .gambar-hover{
+            transition: 2s all;
+        }
+
+        .gambar-hover:hover {
+            transform: scale(0.96);
+            transition: 0.9s all;
+        }
+
+        .gambar-hover::backdrop {
+            filter: blur(5px);
+        }
+
+        .cursor-outline {
+    z-index: 99999;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    position: fixed;
+    opacity: 1;
+    pointer-events: none;
+    transform: translate(-30%, -30%);
+    transition: opacity 0.3s, width 0.08s ease, height 0.08s ease, border-radius 0.08s ease;
+
+    backdrop-filter: blur(1px);
+    
+    /* Glow & additive effect */
+        background: rgb(255, 255, 255);
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.6),
+                    0 0 40px rgba(255, 255, 255, 0.4),
+                    0 0 60px rgba(255, 255, 255, 0.1);
+        mix-blend-mode:exclusion;
+}
+
+.background-image2 {
+    width: 100%;              /* full width */
+    height: 100vh;            /* full viewport height */
+}
+
+.background-image2 {
+    position: fixed;       /* stay fixed behind content */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-image: url('background.jpg');
+    background-size: cover;       /* cover entire screen */
+    background-position: center;  /* center image */
+    z-index: -1;                  /* behind everything */
+    filter: blur(7px) brightness(0.6);
+}
+
+@keyframes float3 {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            25%      { transform: translate(-8px, 4px) rotate(2deg); }
+            50%      { transform: translate(0, -8px) rotate(0deg); }
+            75%      { transform: translate(8px, 4px) rotate(2deg); }
+        }
+
+.background-image.tfk3  { animation: float3 20s ease-in-out infinite; }
+
+
+.background-image {
+    width: 100%;              /* full width */
+    height: 100vh;            /* full viewport height */
+}
+
+
+/* DISINI BACKGROUNDNYA!!!!!!!!1 */
+
+.background-image {
+    position: fixed;       /* stay fixed behind content */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-image: url('https://raw.githubusercontent.com/xpossed-you/xpossed-you.github.io/refs/heads/main/media/offline_folder/background.jpg');
+    background-size: cover;       /* cover entire screen */
+    background-position: center;  /* center image */
+    z-index: -1;                  /* behind everything */
+    filter: blur(7px) brightness(0.6);
+}
+
+/* DISINI BACKGROUNDNYA!!!!!!!!1 */
+
+.inverted {
+    mix-blend-mode: difference;
+    text-shadow: #e6e6e6 0px 0px 10px;
+}
+
+.audio-player {
+    padding: 5px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    opacity: 0.4;
+}
+
+@media (max-width: 768px) {
+  .cursor-outline {
+    opacity: 0 !important;
+  }
+}
+
+
+    </style>
+</head>
+
+<body>
+    <div class="background-image2"></div>
+<div class="background-image tfk3"></div>
+
+    <div class="cursor-outline tfk2"></div>
+
+    <div style="margin-top: 6%;" class="hero offline-box">
+        <h1 class="offline-title inverted">&lt; selesai &gt;</h1>
+        <p class="greet-subtitle">xpos-you logging out</p>
+        <br>
+        <p class="greet-subtitle" style="font-size: 14px; color: rgb(255, 101, 101); margin: 5px;">
+            thank you for all
+        </p>
+        <br>
+        <p class="greet-subtitle">made w love by tfk_061</p>
+        <br>
+
+        <!-- /* oyyyyyyyyyyyyyyyy DISINI BACKGROUNDNYA!!!!!!!!1 */ -->
+
+        <div class="row-gambar">
+            <div class="gambar-hover">
+                <img class="logo tfk" src="https://raw.githubusercontent.com/xpossed-you/xpossed-you.github.io/refs/heads/main/media/offline_folder/logo.png"
+                 alt="">
+            </div>
+            <div class="gambar-hover">
+                <img class="logo tfk2" src="https://raw.githubusercontent.com/xpossed-you/xpossed-you.github.io/refs/heads/main/media/offline_folder/logo2.png"
+                 alt="">
+            </div>
+        </div>
+
+        <!-- /* oyyyyyyyyyyyyyyyy DISINI BACKGROUNDNYA!!!!!!!!1 */ -->
+
+        <br>
+
+       <iframe
+            width="100%"
+            height="100"
+            scrolling="yes"
+            class="audio-player"
+            frameborder="no"
+            autoplay="true"
+            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2109102249&color=%23acacac&auto_play=true&hide_related=true&show_comments=false&show_user=false&show_reposts=true&show_teaser=false&visual=false">
+        </iframe>
+
+        <div
+            style="
+                font-size: 10px;
+                color: #cccccc;
+                line-break: anywhere;
+                word-break: normal;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                font-family: Interstate, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Garuda, Verdana, Tahoma, sans-serif;
+                font-weight: 100;
+            ">
+            <a
+                href="https://soundcloud.com/skrillex"
+                title="Skrillex"
+                target="_blank"
+                style="color: #cccccc; text-decoration: none;">
+            </a>
+        </div>
+
+    </div>
+    
+
+</body>
+</html>
+
+<script>
+const outline = document.querySelector('.cursor-outline');
+let x = 0, y = 0;
+let targetX = 0, targetY = 0;
+let lastX = 0, lastY = 0;
+
+
+// Track hover state
+let hoveringAudioPlayer = false;
+
+document.addEventListener("mousemove", e => {
+  targetX = e.clientX;
+  targetY = e.clientY;
+});
+
+// Detect hover on elements with class 'audio-player'
+document.querySelectorAll('.audio-player').forEach(el => {
+  el.addEventListener('mouseenter', () => hoveringAudioPlayer = true);
+  el.addEventListener('mouseleave', () => hoveringAudioPlayer = false);
+});
+
+function animate() {
+  const dx = targetX - lastX;
+  const dy = targetY - lastY;
+
+  // smooth follow
+  x += (targetX - x) * 0.15;
+  y += (targetY - y) * 0.15;
+
+  outline.style.left = x + "px";
+  outline.style.top = y + "px";
+
+  // speed → stretch size
+  const speed = Math.hypot(dx, dy);
+  const stretch = Math.min(speed * 0.2, 30);
+
+  const base = 20;
+  const width = base + stretch;
+  const height = base - stretch * 0.6;
+
+  const angle = Math.atan2(dy, dx) * (180 / Math.PI);
+
+  outline.style.width = `${width}px`;
+  outline.style.height = `${height}px`;
+  outline.style.transform = `translate(-50%, -50%) rotate(${angle}deg)`;
+
+  // Fade out if hovering audio-player
+  outline.style.opacity = hoveringAudioPlayer ? 0 : 1;
+
+  lastX = x;
+  lastY = y;
+
+  requestAnimationFrame(animate);
+}
+
+animate();
+
+
+
+</script>
